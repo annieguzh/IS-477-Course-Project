@@ -1,0 +1,32 @@
+DATA STORAGE AND ORGANIZATION OVERVIEW
+=====================================
+
+Filesystem layout:
+  data/raw/        - Raw source files as downloaded (API dumps, original CSVs)
+  data/processed/  - Cleaned and integrated datasets used for analysis
+  results/         - Derived artifacts (summaries, plots, analysis outputs)
+
+Naming conventions:
+  * Raw files:        data/raw/<dataset_name>.csv
+  * Processed files:  data/processed/<dataset_name>_cleaned.csv or integrated_*.csv
+  * Checksums:        matching .sha256 files next to raw/processed data
+  * Results:          results/*.csv, results/*.txt, results/*.png
+
+=== FOOD INSPECTIONS (data/raw/food_inspections.csv) ===
+Total records: 301259
+Number of columns: 19
+Columns: ['inspection_id', 'dba_name', 'aka_name', 'license_', 'facility_type', 'risk', 'address', 'city', 'state', 'zip', 'inspection_date', 'inspection_type', 'results', 'violations', 'latitude', 'longitude', 'location.latitude', 'location.longitude', 'location.human_address']
+Unique ZIP codes: 131
+
+=== ZILLOW ZHVI (data/raw/zhvi.csv) ===
+Total records: 26309
+Top 5 cities by record count:
+City
+New York       172
+Houston        105
+Los Angeles     97
+San Antonio     57
+Chicago         56
+Name: count, dtype: int64
+Chicago records: 56
+

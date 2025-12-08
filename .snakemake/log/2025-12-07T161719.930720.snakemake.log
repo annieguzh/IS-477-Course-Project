@@ -1,0 +1,18 @@
+Building DAG of jobs...
+Deleting results/data_storage_summary.txt
+Deleting data/raw/food_inspections.csv
+Deleting data/raw/food_inspections.sha256
+Deleting data/raw/zhvi.csv
+Deleting data/raw/zhvi.sha256
+Deleting results/zip_level_summary.csv
+Deleting results/correlation_heatmap.png
+Deleting results/risk_correlations.txt
+Deleting results/high_risk_vs_zhvi_scatter.png
+Deleting results/low_risk_vs_zhvi_scatter.png
+Deleting results/housing_by_high_risk_tertiles.png
+Deleting results/housing_by_low_risk_tertiles.png
+Deleting results/risk_by_price_quartiles.csv
+Deleting data/processed/integrated_food_housing.csv
+Deleting data/processed/integrated_food_housing.sha256
+Deleting data/processed/zhvi_cleaned.csv
+Deleting data/processed/zhvi_cleaned.sha256

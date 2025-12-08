@@ -1,0 +1,4 @@
+Pearson correlations (computed via pandas.DataFrame.corr)
+High-risk prop vs avg_zhvi_recent: r = 0.626
+Low-risk  prop vs avg_zhvi_recent: r = -0.546
+Medium-risk prop vs avg_zhvi_recent: r = -0.537

@@ -1,0 +1,99 @@
+Assuming unrestricted shared filesystem usage.
+host: wirelessprv-10-192-198-155.near.illinois.edu
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job                  count
+-----------------  -------
+analyze_visualize        1
+clean_food               1
+clean_zhvi               1
+data_acquisition         1
+data_storage             1
+integrate_data           1
+run_all                  1
+total                    7
+
+Select jobs to execute...
+Execute 1 jobs...
+[Sun Dec  7 17:38:08 2025]
+localrule data_acquisition:
+    output: data/raw/food_inspections.csv, data/raw/food_inspections.sha256, data/raw/zhvi.csv, data/raw/zhvi.sha256
+    jobid: 2
+    reason: Missing output files: data/raw/zhvi.csv, data/raw/food_inspections.csv
+    resources: tmpdir=/var/folders/sh/z8h893ps7k92l_crm8fmjw800000gn/T
+[Sun Dec  7 17:38:54 2025]
+Finished jobid: 2 (Rule: data_acquisition)
+1 of 7 steps (14%) done
+Select jobs to execute...
+Execute 2 jobs...
+[Sun Dec  7 17:38:54 2025]
+localrule clean_food:
+    input: data/raw/food_inspections.csv
+    output: data/processed/food_inspections_cleaned.csv, data/processed/food_inspections_cleaned.sha256
+    jobid: 4
+    reason: Missing output files: data/processed/food_inspections_cleaned.csv; Input files updated by another job: data/raw/food_inspections.csv
+    resources: tmpdir=/var/folders/sh/z8h893ps7k92l_crm8fmjw800000gn/T
+[Sun Dec  7 17:38:54 2025]
+localrule data_storage:
+    input: data/raw/food_inspections.csv, data/raw/zhvi.csv
+    output: results/data_storage_summary.txt
+    jobid: 1
+    reason: Missing output files: results/data_storage_summary.txt; Input files updated by another job: data/raw/zhvi.csv, data/raw/food_inspections.csv
+    resources: tmpdir=/var/folders/sh/z8h893ps7k92l_crm8fmjw800000gn/T
+Select jobs to execute...
+[Sun Dec  7 17:39:00 2025]
+Finished jobid: 1 (Rule: data_storage)
+2 of 7 steps (29%) done
+Execute 1 jobs...
+[Sun Dec  7 17:39:00 2025]
+localrule clean_zhvi:
+    input: data/raw/zhvi.csv
+    output: data/processed/zhvi_cleaned.csv, data/processed/zhvi_cleaned.sha256
+    jobid: 5
+    reason: Missing output files: data/processed/zhvi_cleaned.csv; Input files updated by another job: data/raw/zhvi.csv
+    resources: tmpdir=/var/folders/sh/z8h893ps7k92l_crm8fmjw800000gn/T
+[Sun Dec  7 17:39:00 2025]
+Finished jobid: 4 (Rule: clean_food)
+3 of 7 steps (43%) done
+[Sun Dec  7 17:39:08 2025]
+Finished jobid: 5 (Rule: clean_zhvi)
+4 of 7 steps (57%) done
+Select jobs to execute...
+Execute 1 jobs...
+[Sun Dec  7 17:39:08 2025]
+localrule integrate_data:
+    input: data/processed/food_inspections_cleaned.csv, data/processed/zhvi_cleaned.csv
+    output: data/processed/integrated_food_housing.csv, data/processed/integrated_food_housing.sha256, results/integrated_data_summary.txt
+    jobid: 3
+    reason: Missing output files: data/processed/integrated_food_housing.csv, results/integrated_data_summary.txt; Input files updated by another job: data/processed/food_inspections_cleaned.csv, data/processed/zhvi_cleaned.csv
+    resources: tmpdir=/var/folders/sh/z8h893ps7k92l_crm8fmjw800000gn/T
+[Sun Dec  7 17:39:10 2025]
+Finished jobid: 3 (Rule: integrate_data)
+5 of 7 steps (71%) done
+Select jobs to execute...
+Execute 1 jobs...
+[Sun Dec  7 17:39:10 2025]
+localrule analyze_visualize:
+    input: data/processed/integrated_food_housing.csv
+    output: results/zip_level_summary.csv, results/correlation_heatmap.png, results/risk_correlations.txt, results/high_risk_vs_zhvi_scatter.png, results/low_risk_vs_zhvi_scatter.png, results/housing_by_high_risk_tertiles.png, results/housing_by_low_risk_tertiles.png, results/risk_by_price_quartiles.csv
+    jobid: 6
+    reason: Missing output files: results/zip_level_summary.csv, results/housing_by_low_risk_tertiles.png, results/risk_by_price_quartiles.csv, results/risk_correlations.txt, results/low_risk_vs_zhvi_scatter.png, results/housing_by_high_risk_tertiles.png, results/correlation_heatmap.png, results/high_risk_vs_zhvi_scatter.png; Input files updated by another job: data/processed/integrated_food_housing.csv
+    resources: tmpdir=/var/folders/sh/z8h893ps7k92l_crm8fmjw800000gn/T
+[Sun Dec  7 17:39:13 2025]
+Finished jobid: 6 (Rule: analyze_visualize)
+6 of 7 steps (86%) done
+Select jobs to execute...
+Execute 1 jobs...
+[Sun Dec  7 17:39:13 2025]
+localrule run_all:
+    input: results/data_storage_summary.txt, results/integrated_data_summary.txt, results/zip_level_summary.csv, results/correlation_heatmap.png, results/risk_correlations.txt, results/high_risk_vs_zhvi_scatter.png, results/low_risk_vs_zhvi_scatter.png, results/housing_by_high_risk_tertiles.png, results/housing_by_low_risk_tertiles.png, results/risk_by_price_quartiles.csv
+    jobid: 0
+    reason: Input files updated by another job: results/zip_level_summary.csv, results/housing_by_low_risk_tertiles.png, results/risk_by_price_quartiles.csv, results/risk_correlations.txt, results/low_risk_vs_zhvi_scatter.png, results/housing_by_high_risk_tertiles.png, results/integrated_data_summary.txt, results/correlation_heatmap.png, results/high_risk_vs_zhvi_scatter.png, results/data_storage_summary.txt
+    resources: tmpdir=/var/folders/sh/z8h893ps7k92l_crm8fmjw800000gn/T
+[Sun Dec  7 17:39:13 2025]
+Finished jobid: 0 (Rule: run_all)
+7 of 7 steps (100%) done
+Complete log(s): /Users/anniegu/Desktop/IS-477-Course-Project/.snakemake/log/2025-12-07T173807.980489.snakemake.log

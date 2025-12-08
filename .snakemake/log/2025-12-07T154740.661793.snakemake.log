@@ -1,0 +1,50 @@
+Assuming unrestricted shared filesystem usage.
+host: wirelessprv-10-192-198-155.near.illinois.edu
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job                  count
+-----------------  -------
+analyze_visualize        1
+data_storage             1
+run_all                  1
+total                    3
+
+Select jobs to execute...
+Execute 1 jobs...
+[Sun Dec  7 15:47:42 2025]
+localrule analyze_visualize:
+    input: data/processed/integrated_food_housing.csv
+    output: results/zip_level_summary.csv, results/correlation_heatmap.png, results/risk_correlations.txt, results/high_risk_vs_zhvi_scatter.png, results/low_risk_vs_zhvi_scatter.png, results/housing_by_high_risk_tertiles.png, results/housing_by_low_risk_tertiles.png, results/risk_by_price_quartiles.csv
+    jobid: 3
+    reason: Missing output files: results/housing_by_low_risk_tertiles.png, results/risk_by_price_quartiles.csv, results/correlation_heatmap.png, results/risk_correlations.txt, results/housing_by_high_risk_tertiles.png, results/high_risk_vs_zhvi_scatter.png, results/low_risk_vs_zhvi_scatter.png, results/zip_level_summary.csv
+    resources: tmpdir=/var/folders/sh/z8h893ps7k92l_crm8fmjw800000gn/T
+Select jobs to execute...
+RuleException:
+CalledProcessError in file "/Users/anniegu/Desktop/IS-477-Course-Project/Snakefile", line 91:
+Command 'set -euo pipefail;  python scripts/05_data_analysis_visualization.py' returned non-zero exit status 1.
+[Sun Dec  7 15:47:47 2025]
+Error in rule analyze_visualize:
+    message: None
+    jobid: 3
+    input: data/processed/integrated_food_housing.csv
+    output: results/zip_level_summary.csv, results/correlation_heatmap.png, results/risk_correlations.txt, results/high_risk_vs_zhvi_scatter.png, results/low_risk_vs_zhvi_scatter.png, results/housing_by_high_risk_tertiles.png, results/housing_by_low_risk_tertiles.png, results/risk_by_price_quartiles.csv
+    shell:
+        python scripts/05_data_analysis_visualization.py
+        (command exited with non-zero exit code)
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look below for error messages
+[Sun Dec  7 15:47:47 2025]
+Error in rule analyze_visualize:
+    message: None
+    jobid: 3
+    input: data/processed/integrated_food_housing.csv
+    output: results/zip_level_summary.csv, results/correlation_heatmap.png, results/risk_correlations.txt, results/high_risk_vs_zhvi_scatter.png, results/low_risk_vs_zhvi_scatter.png, results/housing_by_high_risk_tertiles.png, results/housing_by_low_risk_tertiles.png, results/risk_by_price_quartiles.csv
+    shell:
+        python scripts/05_data_analysis_visualization.py
+        (command exited with non-zero exit code)
+Complete log(s): /Users/anniegu/Desktop/IS-477-Course-Project/.snakemake/log/2025-12-07T154740.661793.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

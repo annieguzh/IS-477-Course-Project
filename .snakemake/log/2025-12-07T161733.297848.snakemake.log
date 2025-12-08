@@ -1,0 +1,75 @@
+Assuming unrestricted shared filesystem usage.
+host: wirelessprv-10-192-198-155.near.illinois.edu
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job                  count
+-----------------  -------
+analyze_visualize        1
+clean_food               1
+clean_zhvi               1
+data_acquisition         1
+data_storage             1
+integrate_data           1
+run_all                  1
+total                    7
+
+Select jobs to execute...
+Execute 1 jobs...
+[Sun Dec  7 16:17:33 2025]
+localrule data_acquisition:
+    output: data/raw/food_inspections.csv, data/raw/food_inspections.sha256, data/raw/zhvi.csv, data/raw/zhvi.sha256
+    jobid: 2
+    reason: Missing output files: data/raw/zhvi.csv, data/raw/food_inspections.csv
+    resources: tmpdir=/var/folders/sh/z8h893ps7k92l_crm8fmjw800000gn/T
+[Sun Dec  7 16:18:22 2025]
+Finished jobid: 2 (Rule: data_acquisition)
+1 of 7 steps (14%) done
+Select jobs to execute...
+Execute 2 jobs...
+[Sun Dec  7 16:18:22 2025]
+localrule clean_food:
+    input: data/raw/food_inspections.csv
+    output: data/processed/food_inspections_cleaned.csv, data/processed/food_inspections_cleaned.sha256
+    jobid: 5
+    reason: Missing output files: data/processed/food_inspections_cleaned.csv; Input files updated by another job: data/raw/food_inspections.csv
+    resources: tmpdir=/var/folders/sh/z8h893ps7k92l_crm8fmjw800000gn/T
+[Sun Dec  7 16:18:22 2025]
+localrule data_storage:
+    input: data/raw/food_inspections.csv, data/raw/zhvi.csv
+    output: results/data_storage_summary.txt
+    jobid: 1
+    reason: Missing output files: results/data_storage_summary.txt; Input files updated by another job: data/raw/zhvi.csv, data/raw/food_inspections.csv
+    resources: tmpdir=/var/folders/sh/z8h893ps7k92l_crm8fmjw800000gn/T
+Select jobs to execute...
+RuleException:
+CalledProcessError in file "/Users/anniegu/Desktop/IS-477-Course-Project/Snakefile", line 48:
+Command 'set -euo pipefail;  python scripts/03_data_cleaning_food.py' returned non-zero exit status 1.
+[Sun Dec  7 16:18:26 2025]
+Error in rule clean_food:
+    message: None
+    jobid: 5
+    input: data/raw/food_inspections.csv
+    output: data/processed/food_inspections_cleaned.csv, data/processed/food_inspections_cleaned.sha256
+    shell:
+        python scripts/03_data_cleaning_food.py
+        (command exited with non-zero exit code)
+[Sun Dec  7 16:18:27 2025]
+Finished jobid: 1 (Rule: data_storage)
+2 of 7 steps (29%) done
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look below for error messages
+[Sun Dec  7 16:18:27 2025]
+Error in rule clean_food:
+    message: None
+    jobid: 5
+    input: data/raw/food_inspections.csv
+    output: data/processed/food_inspections_cleaned.csv, data/processed/food_inspections_cleaned.sha256
+    shell:
+        python scripts/03_data_cleaning_food.py
+        (command exited with non-zero exit code)
+Complete log(s): /Users/anniegu/Desktop/IS-477-Course-Project/.snakemake/log/2025-12-07T161733.297848.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

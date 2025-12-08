@@ -1,0 +1,50 @@
+
+ZHVI date columns: 310 (from 2000-01-31 to 2025-10-31)
+
+=== PERFORMING INTEGRATION ===
+
+ZIP code overlap analysis:
+  Food inspection ZIPs: 59
+  Housing ZIPs (all): 24745
+  ZIPs in BOTH datasets: 58
+  Food ZIPs not in housing: 1
+  Housing ZIPs not in food: 24687
+
+Integration complete!
+Integrated records: 17,366
+Integrated ZIP codes: 58
+
+=== POST-INTEGRATION ANALYSIS ===
+
+Integrated Dataset:
+  Total establishments: 17,366
+  Unique ZIP codes: 58
+  Columns: 23
+
+Establishments per ZIP code:
+  Mean: 299.4
+  Median: 284
+  Min: 14
+  Max: 783
+
+Risk distribution in integrated data:
+risk
+Risk 1 (High)      12683
+Risk 2 (Medium)     3235
+Risk 3 (Low)        1448
+Name: count, dtype: int64
+
+Housing value statistics (latest ZHVI):
+  Mean: $343,916
+  Median: $335,141
+  Min: $115,541
+  Max: $607,915
+
+Top 5 facility types in integrated data:
+facility_type
+Restaurant                      11647
+Grocery Store                    2527
+School                            856
+Children's Services Facility      553
+Bakery                            287
+Name: count, dtype: int64

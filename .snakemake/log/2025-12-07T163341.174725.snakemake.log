@@ -1,0 +1,8 @@
+Building DAG of jobs...
+Deleting results/data_storage_summary.txt
+Deleting data/raw/food_inspections.csv
+Deleting data/raw/food_inspections.sha256
+Deleting data/raw/zhvi.csv
+Deleting data/raw/zhvi.sha256
+Deleting data/processed/zhvi_cleaned.csv
+Deleting data/processed/zhvi_cleaned.sha256

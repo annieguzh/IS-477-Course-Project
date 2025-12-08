@@ -1,0 +1,65 @@
+Assuming unrestricted shared filesystem usage.
+host: wirelessprv-10-192-198-155.near.illinois.edu
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job                  count
+-----------------  -------
+analyze_visualize        1
+clean_food               1
+clean_zhvi               1
+data_storage             1
+integrate_data           1
+run_all                  1
+total                    6
+
+Select jobs to execute...
+Execute 1 jobs...
+[Sun Dec  7 16:21:22 2025]
+localrule clean_zhvi:
+    input: data/raw/zhvi.csv
+    output: data/processed/zhvi_cleaned.csv, data/processed/zhvi_cleaned.sha256
+    jobid: 6
+    reason: Missing output files: data/processed/zhvi_cleaned.csv
+    resources: tmpdir=/var/folders/sh/z8h893ps7k92l_crm8fmjw800000gn/T
+Select jobs to execute...
+[Sun Dec  7 16:21:30 2025]
+Finished jobid: 6 (Rule: clean_zhvi)
+1 of 6 steps (17%) done
+Execute 1 jobs...
+[Sun Dec  7 16:21:30 2025]
+localrule clean_food:
+    input: data/raw/food_inspections.csv
+    output: data/processed/food_inspections_cleaned.csv, data/processed/food_inspections_cleaned.sha256
+    jobid: 5
+    reason: Missing output files: data/processed/food_inspections_cleaned.csv
+    resources: tmpdir=/var/folders/sh/z8h893ps7k92l_crm8fmjw800000gn/T
+Select jobs to execute...
+RuleException:
+CalledProcessError in file "/Users/anniegu/Desktop/IS-477-Course-Project/Snakefile", line 48:
+Command 'set -euo pipefail;  python scripts/03_data_cleaning_food.py' returned non-zero exit status 1.
+[Sun Dec  7 16:21:34 2025]
+Error in rule clean_food:
+    message: None
+    jobid: 5
+    input: data/raw/food_inspections.csv
+    output: data/processed/food_inspections_cleaned.csv, data/processed/food_inspections_cleaned.sha256
+    shell:
+        python scripts/03_data_cleaning_food.py
+        (command exited with non-zero exit code)
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look below for error messages
+[Sun Dec  7 16:21:34 2025]
+Error in rule clean_food:
+    message: None
+    jobid: 5
+    input: data/raw/food_inspections.csv
+    output: data/processed/food_inspections_cleaned.csv, data/processed/food_inspections_cleaned.sha256
+    shell:
+        python scripts/03_data_cleaning_food.py
+        (command exited with non-zero exit code)
+Complete log(s): /Users/anniegu/Desktop/IS-477-Course-Project/.snakemake/log/2025-12-07T162122.181534.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.
