@@ -1,0 +1,69 @@
+{
+    "identifier": {
+      "identifierType": "URL",
+      "identifier": "https://github.com/annieguzh/IS-477-Course-Project"
+    },
+    "creators": [
+      {
+        "name": "Gu, Annie",
+        "nameType": "Personal"
+      },
+      {
+        "name": "Zhang, Judy",
+        "nameType": "Personal"
+      }
+    ],
+    "titles": [
+      {
+        "title": "Chicago Food Safety Risk and Neighborhood Housing Values: Integrated Dataset and Workflow"
+      }
+    ],
+    "publisher": "University of Illinois Urbana-Champaign",
+    "publicationYear": 2025,
+    "resourceType": {
+      "resourceTypeGeneral": "Dataset",
+      "resourceType": "Integrated establishment-level dataset with ZIP-level housing values"
+    },
+    "descriptions": [
+      {
+        "descriptionType": "Abstract",
+        "description": "This dataset links the latest food safety inspection records for food establishments in Chicago to Zillow Home Value Index (ZHVI) housing values at the ZIP-code level. The project explores how the proportion of high-risk and low-risk inspections in each ZIP code is associated with local housing prices. Data are acquired programmatically from the City of Chicago open data API and Zillow's public research CSVs, cleaned, integrated by ZIP code, and analyzed using a Snakemake-driven workflow."
+      }
+    ],
+    "subjects": [
+      { "subject": "Public health" },
+      { "subject": "Urban studies" },
+      { "subject": "Housing market" },
+      { "subject": "Food safety" },
+      { "subject": "Chicago" }
+    ],
+    "contributors": [
+      {
+        "contributorType": "Researcher",
+        "name": "Course: IS 477 Data Management, Curation, and Reproducibility"
+      }
+    ],
+    "relatedIdentifiers": [
+      {
+        "relationType": "IsDerivedFrom",
+        "relatedIdentifierType": "URL",
+        "relatedIdentifier": "https://data.cityofchicago.org/resource/4ijn-s7e5.json"
+      },
+      {
+        "relationType": "IsDerivedFrom",
+        "relatedIdentifierType": "URL",
+        "relatedIdentifier": "https://www.zillow.com/research/data/"
+      }
+    ],
+    "geoLocations": [
+      {
+        "geoLocationPlace": "Chicago, Illinois, United States"
+      }
+    ],
+    "rightsList": [
+      {
+        "rights": "Original data are subject to the terms of the City of Chicago Data Portal and Zillow Research data licenses. This repository distributes only derived, integrated data and code."
+      }
+    ]
+  }
+  
