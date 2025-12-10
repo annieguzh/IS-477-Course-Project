@@ -130,11 +130,13 @@ To reproduce our results from scratch on a new machine, a reader should follow t
 
 2. **Set up the environment.** Create a Python virtual environment and install dependencies using `pip install -r pip_freeze.txt.` We also provide a `requirements.txt` for required dependencies.
 
-3. **Run the full workflow (optional but recommended).** If full data acquisition is desired, run the Snakemake workflow from the project root. This will execute the acquisition, storage, cleaning, integration, and analysis scripts in order, producing the raw, processed, and results files described in this report.
+3. **Run the full workflow (optional but recommended).** If full data acquisition is desired, run the Snakemake workflow from the project root. To do this, run the codes within [https://github.com/annieguzh/IS-477-Course-Project/blob/main/Run\_All\_Script\_Snakemake.ipynb](https://github.com/annieguzh/IS-477-Course-Project/blob/main/Run_All_Script_Snakemake.ipynb). This will execute the acquisition, storage, cleaning, integration, and analysis scripts in order, producing the raw, processed, and results files described in this report.
 
 4. **Reproduce from archived data (offline option).** If network access is limited, download the archived processed datasets and results from the Box folder and place them in `data/processed/` and `results/` as documented (please see Box folder link referenced here [https://uofi.box.com/s/94apkk14xbqhhi5r0gk06bscn58w155c](https://uofi.box.com/s/94apkk14xbqhhi5r0gk06bscn58w155c)). The Snakemake workflow can then be configured to start from the cleaning or integration stages.
 
 5. **Inspect the workflow notebook.** Finally, open the `workflow.ipynb` notebook to inspect intermediate outputs and replicate the exploratory steps that guided our design (please see workflow notebook referenced here [https://github.com/annieguzh/IS-477-Course-Project/blob/main/workflow.ipynb](https://github.com/annieguzh/IS-477-Course-Project/blob/main/workflow.ipynb)). 
+
+For metadata please see [https://github.com/annieguzh/IS-477-Course-Project/blob/main/documentations/metadata.json](https://github.com/annieguzh/IS-477-Course-Project/blob/main/documentations/metadata.json) and for data dictionary please see [https://github.com/annieguzh/IS-477-Course-Project/blob/main/documentations/08\_Data\_Dictionary.md](https://github.com/annieguzh/IS-477-Course-Project/blob/main/documentations/08_Data_Dictionary.md). 
 
 Together, these artifacts \- scripts, Snakemake rules, checksum files, Box snapshots, and written documentation \- are intended to make the project transparent and reproducible for both graders and future collaborators.
 

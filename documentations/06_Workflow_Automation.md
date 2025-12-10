@@ -58,7 +58,7 @@ This DAG encodes the provenance of every artifact: for each figure or summary fi
 
 ### 3\. Run‑all script
 
-To make reproduction trivial, a small “run all” script is provided. In notebook form:
+To make reproduction trivial, a small “run all” script is provided. In notebook https://github.com/annieguzh/IS-477-Course-Project/blob/main/Run_All_Script_Snakemake.ipynb:
 
 python  
 \# Run\_All\_Script\_Snakemake.ipynb  

@@ -31,8 +31,7 @@ To fully reproduce this project from scratch on a new machine:
    4. Matching .sha256 checksum files are written next to each raw CSV for integrity verification.
 
 4. Run the full workflow  
-   1. From the project root, run:  
-      1. snakemake \--cores 1  
+   1. Find the Run_All_Script_Snakemake.ipyng file (https://github.com/annieguzh/IS-477-Course-Project/blob/main/Run_All_Script_Snakemake.ipynb) from the project repo, run the codes within the notebook. (Alternatively, you can run "snakemake --cores 1" from the project root.)
    2. Snakemake will orchestrate the entire pipeline:  
       1. scripts/01\_data\_acquisition.py (data collection)  
       2. scripts/02\_data\_storage.py (storage summary)  
